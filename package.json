@@ -16,8 +16,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "css:standard": "node-sass -w views/themes/standard/styles/app.scss ../../serve/public/dist/themes/standard/css/app.css",
-        "postinstall": "npm install"
+        "css:standard": "node-sass -w views/themes/standard/styles/app.scss ../../serve/public/dist/themes/standard/css/app.css"
     },
     "keywords": [],
     "author": "Ben Howdle <hello@benhowdle.im> (http://benhowdle.im/)",
