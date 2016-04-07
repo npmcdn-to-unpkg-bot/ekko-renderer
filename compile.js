@@ -7,7 +7,7 @@ require('babel-register')({
 
 function renderFile(env, options, cb, client) {
     try {
-        var component = require('./views/page.jsx')
+        var component = require('./views/page')
         var markup = '<!DOCTYPE html>'
         markup += ReactDOMServer.renderToStaticMarkup(
             React.createElement(component, Object.assign({}, options, {
