@@ -1,31 +1,27 @@
 'use strict';
 
 var React = require('react');
-var moment = require('moment');
 
-var Standard = React.createClass({
-    displayName: 'Standard',
+var Studio = React.createClass({
+    displayName: 'Studio',
 
 
     render: function render() {
         if (!this.props.doc) {
             return null;
         }
-        var styles = {
-            backgroundImage: 'linear-gradient(\n                                  rgba(0,0,0,0.15),\n                                  rgba(0,0,0,0.7)\n                              ),\n                              url(' + this.props.doc.data.cover.source + ')'
-        };
         return React.createElement(
             'div',
             null,
             React.createElement(
                 'header',
-                { style: styles, className: 'hero' },
+                null,
+                React.createElement('img', { src: this.props.doc.data.picture.url }),
                 React.createElement(
                     'h1',
                     null,
                     this.props.doc.data.name
-                ),
-                React.createElement('img', { className: 'profile-picture', src: this.props.doc.data.picture.url })
+                )
             ),
             React.createElement(
                 'main',
@@ -35,6 +31,7 @@ var Standard = React.createClass({
                     { className: 'desc' },
                     this.props.doc.data.about
                 ),
+                React.createElement('img', { src: this.props.doc.data.cover.source }),
                 React.createElement('hr', null),
                 this.props.doc.data.posts.map(function (post) {
                     return React.createElement(
@@ -45,7 +42,7 @@ var Standard = React.createClass({
                         React.createElement(
                             'small',
                             null,
-                            moment(post.created_time).fromNow()
+                            new Date(post.created_time).toString()
                         )
                     );
                 }),
@@ -93,21 +90,17 @@ var Standard = React.createClass({
                     );
                 }),
                 React.createElement('hr', null),
-                React.createElement(
-                    'div',
-                    { className: 'photo-grid' },
-                    this.props.doc.data.photos.map(function (photo) {
-                        var image = photo.images.length ? photo.images[0] : null;
-                        if (!image) {
-                            return null;
-                        }
-                        return React.createElement('img', { src: image.source });
-                    })
-                )
+                this.props.doc.data.photos.map(function (photo) {
+                    var image = photo.images.length ? photo.images[0] : null;
+                    if (!image) {
+                        return null;
+                    }
+                    return React.createElement('img', { src: image.source });
+                })
             )
         );
     }
 
 });
 
-module.exports = Standard;
+module.exports = Studio;

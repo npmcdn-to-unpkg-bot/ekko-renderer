@@ -1,7 +1,9 @@
 'use strict';
 
-var standard = require('./standard/components/layout.jsx');
+var standard = require('./standard/components/layout');
+var studio = require('./studio/components/layout');
 
 module.exports = {
-    standard: standard
+    standard: standard,
+    studio: studio
 };

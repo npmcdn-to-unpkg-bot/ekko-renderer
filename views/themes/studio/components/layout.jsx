@@ -1,30 +1,23 @@
-var React = require('react')
-var moment = require('moment')
+var React = require('react');
 
-var Standard = React.createClass({
+var Studio = React.createClass({
 
     render: function() {
         if (!this.props.doc) {
             return null
         }
-        const styles = {
-            backgroundImage: `linear-gradient(
-                                  rgba(0,0,0,0.15),
-                                  rgba(0,0,0,0.7)
-                              ),
-                              url(${this.props.doc.data.cover.source})`
-        }
         return (
             <div>
-                <header style={styles} className="hero">
+                <header>
+                    <img src={this.props.doc.data.picture.url}/>
                     <h1>{this.props.doc.data.name}</h1>
-                    <img className="profile-picture" src={this.props.doc.data.picture.url}/>
                 </header>
                 <main>
                     <h2 className="desc">{this.props.doc.data.about}</h2>
+                    <img src={this.props.doc.data.cover.source}/>
                     <hr/>
                     {this.props.doc.data.posts.map(post => {
-                        return <h3>{post.message} - <small>{moment(post.created_time).fromNow()}</small></h3>
+                        return <h3>{post.message} - <small>{new Date(post.created_time).toString()}</small></h3>
                     })}
                     <hr/>
                     {(!!(this.props.doc.data.events && this.props.doc.data.events.length)) && (
@@ -43,17 +36,15 @@ var Standard = React.createClass({
                         return <a href={call_to_action.web_url}>{(call_to_action.type == 'CONTACT_US') && 'Contact us'}</a>
                     })}
                     <hr/>
-                    <div className="photo-grid">
-                        {this.props.doc.data.photos.map(photo => {
-                            let image = photo.images.length
-                                ? photo.images[0]
-                                : null
-                            if (!image) {
-                                return null
-                            }
-                            return <img src={image.source}/>
-                        })}
-                    </div>
+                    {this.props.doc.data.photos.map(photo => {
+                        let image = photo.images.length
+                            ? photo.images[0]
+                            : null
+                        if (!image) {
+                            return null
+                        }
+                        return <img src={image.source}/>
+                    })}
                 </main>
             </div>
         );
@@ -61,4 +52,4 @@ var Standard = React.createClass({
 
 });
 
-module.exports = Standard;
+module.exports = Studio;

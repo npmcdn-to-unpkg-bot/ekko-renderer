@@ -14,8 +14,8 @@ body {
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
-    background: #fff;
-    color: #282828;
+    background: #282828;
+    color: #edeff5;
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -42,8 +42,7 @@ a {
 }
 
 h1 {
-    padding: 48px 0;
-    color: rgba(255, 255, 255, 0.8);
+    margin: 48px 0;
 }
 
 h3 {
@@ -55,32 +54,4 @@ h3 {
 
 .desc {
     margin-bottom: 24px;
-}
-
-main {
-    padding-top: 24px;
-    width: 80%;
-    margin: auto;
-}
-
-.hero {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: 50%;
-    height: 60vh;
-    .profile-picture {
-        border: 1px solid rgba(255, 255, 255, 0.6);
-    }
-}
-
-.photo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100vw;
-    font-size: 0;
-    align-content: center;
-    img {
-        width: 33%;
-    }
 }
