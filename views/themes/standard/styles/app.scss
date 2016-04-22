@@ -21,7 +21,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-header, main {
+header {
     text-align: center;
 }
 
@@ -63,13 +63,19 @@ main {
     margin: auto;
 }
 
+.button {
+    text-decoration: none;
+    padding: 6px 12px;
+}
+
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: 50%;
+    background-position: 50%;
     height: 60vh;
+    min-height: 430px;
     .profile-picture {
-        border: 1px solid rgba(255, 255, 255, 0.6);
+        
     }
 }
 
@@ -77,10 +83,34 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 100vw;
+    height: 70vw;
     font-size: 0;
     align-content: center;
     img {
-        width: 33%;
+        width: 33.333%;
     }
+}
+
+.cta {
+    background: #222;
+    padding: 48px 0;
+    margin: 24px 0;
+    text-align: center;
+    a {
+        color: #222;
+        background: #fff;
+    }
+}
+
+.split {
+    display: flex;
+}
+
+.events, .posts {
+    padding: 24px;
+    width: 50%;
+}
+
+.events {
+    background: #f7f7f7;
 }

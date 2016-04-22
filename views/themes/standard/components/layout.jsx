@@ -14,6 +14,7 @@ var Standard = React.createClass({
                               ),
                               url(${this.props.doc.data.cover.source})`
         }
+        const cta = this.props.doc.data.call_to_actions[0]
         return (
             <div>
                 <header style={styles} className="hero">
@@ -22,27 +23,26 @@ var Standard = React.createClass({
                 </header>
                 <main>
                     <h2 className="desc">{this.props.doc.data.about}</h2>
-                    <hr/>
-                    {this.props.doc.data.posts.map(post => {
-                        return <h3>{post.message} - <small>{moment(post.created_time).fromNow()}</small></h3>
-                    })}
-                    <hr/>
-                    {(!!(this.props.doc.data.events && this.props.doc.data.events.length)) && (
-                        <h2>Events</h2>
-                    )}
-                    {this.props.doc.data.events.map(event => {
-                        return <div>
-                            <h3>{event.name}</h3>
-                            <p>Description: {event.description}</p>
-                            <p>Place: {event.place.name}</p>
-                            <p>Date: {new Date(event.start_time).toString()}</p>
+                    <div className="split">
+                        <div className="events">
+                            {this.props.doc.data.events.map(event => {
+                                return <div>
+                                    <h3>{event.name}</h3>
+                                    <p>Description: {event.description}</p>
+                                    <p>Place: {event.place.name}</p>
+                                    <p>Date: {new Date(event.start_time).toString()}</p>
+                                </div>
+                            })}
                         </div>
-                    })}
-                    <hr/>
-                    {this.props.doc.data.call_to_actions.map(call_to_action => {
-                        return <a href={call_to_action.web_url}>{(call_to_action.type == 'CONTACT_US') && 'Contact us'}</a>
-                    })}
-                    <hr/>
+                        <div className="posts">
+                            {this.props.doc.data.posts.map(post => {
+                                return <h3>{post.message} - <small>{moment(post.created_time).fromNow()}</small></h3>
+                            })}
+                        </div>
+                    </div>
+                    <div className="cta">
+                        <a className="button" href={cta.web_url}>{(cta.type == 'CONTACT_US') && 'Contact us'}</a>
+                    </div>
                     <div className="photo-grid">
                         {this.props.doc.data.photos.map(photo => {
                             let image = photo.images.length

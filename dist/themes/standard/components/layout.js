@@ -14,6 +14,7 @@ var Standard = React.createClass({
         var styles = {
             backgroundImage: 'linear-gradient(\n                                  rgba(0,0,0,0.15),\n                                  rgba(0,0,0,0.7)\n                              ),\n                              url(' + this.props.doc.data.cover.source + ')'
         };
+        var cta = this.props.doc.data.call_to_actions[0];
         return React.createElement(
             'div',
             null,
@@ -35,64 +36,69 @@ var Standard = React.createClass({
                     { className: 'desc' },
                     this.props.doc.data.about
                 ),
-                React.createElement('hr', null),
-                this.props.doc.data.posts.map(function (post) {
-                    return React.createElement(
-                        'h3',
-                        null,
-                        post.message,
-                        ' - ',
-                        React.createElement(
-                            'small',
-                            null,
-                            moment(post.created_time).fromNow()
-                        )
-                    );
-                }),
-                React.createElement('hr', null),
-                !!(this.props.doc.data.events && this.props.doc.data.events.length) && React.createElement(
-                    'h2',
-                    null,
-                    'Events'
-                ),
-                this.props.doc.data.events.map(function (event) {
-                    return React.createElement(
+                React.createElement(
+                    'div',
+                    { className: 'split' },
+                    React.createElement(
                         'div',
-                        null,
-                        React.createElement(
-                            'h3',
-                            null,
-                            event.name
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'Description: ',
-                            event.description
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'Place: ',
-                            event.place.name
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'Date: ',
-                            new Date(event.start_time).toString()
-                        )
-                    );
-                }),
-                React.createElement('hr', null),
-                this.props.doc.data.call_to_actions.map(function (call_to_action) {
-                    return React.createElement(
+                        { className: 'events' },
+                        this.props.doc.data.events.map(function (event) {
+                            return React.createElement(
+                                'div',
+                                null,
+                                React.createElement(
+                                    'h3',
+                                    null,
+                                    event.name
+                                ),
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'Description: ',
+                                    event.description
+                                ),
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'Place: ',
+                                    event.place.name
+                                ),
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'Date: ',
+                                    new Date(event.start_time).toString()
+                                )
+                            );
+                        })
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'posts' },
+                        this.props.doc.data.posts.map(function (post) {
+                            return React.createElement(
+                                'h3',
+                                null,
+                                post.message,
+                                ' - ',
+                                React.createElement(
+                                    'small',
+                                    null,
+                                    moment(post.created_time).fromNow()
+                                )
+                            );
+                        })
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'cta' },
+                    React.createElement(
                         'a',
-                        { href: call_to_action.web_url },
-                        call_to_action.type == 'CONTACT_US' && 'Contact us'
-                    );
-                }),
-                React.createElement('hr', null),
+                        { className: 'button', href: cta.web_url },
+                        cta.type == 'CONTACT_US' && 'Contact us'
+                    )
+                ),
                 React.createElement(
                     'div',
                     { className: 'photo-grid' },
