@@ -16,8 +16,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css:standard": "node-sass -w views/themes/standard/styles/app.scss ../../serve/public/dist/themes/standard/css/app.css",
-    "css:studio": "node-sass -w views/themes/studio/styles/app.scss ../../serve/public/dist/themes/studio/css/app.css",
+    "css:standard": "node-sass -w views/themes/standard/styles/app.scss ../../serve/public/dist/themes/standard/css/app.css --source-map true",
+    "css:studio": "node-sass -w views/themes/studio/styles/app.scss ../../serve/public/dist/themes/studio/css/app.css --source-map",
     "build": "babel views -d dist",
     "postinstall": "npm run build",
     "dev": "babel views -w -d dist"
