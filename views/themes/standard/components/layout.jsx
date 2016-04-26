@@ -26,11 +26,17 @@ var Standard = React.createClass({
                     <div className="events">
                         {this.props.doc.data.events.map(event => {
                             return <div className="event">
+                                <div className="event-cover">
+                                    <img src={event.cover.source} alt=""/>
+                                </div>
                                 <h3 className="event-name">{event.name}</h3>
-                                <hr/>
-                                <p><span className="event-meta">Description:</span> {event.description}</p>
-                                <p><span className="event-meta">Place:</span> {event.place.name}</p>
-                                <p><span className="event-meta">Date:</span> {moment(event.start_time).format('dddd, MMMM Do YYYY [at] h:mm:ss a')}</p>
+                                <div className="event-metas">
+                                    {(event.description) && (
+                                        <p><span className="event-meta">Description:</span> {event.description}</p>
+                                    )}
+                                    <p><span className="event-meta">Place:</span> {event.place.name}</p>
+                                    <p><span className="event-meta">Date:</span> {moment(event.start_time).format('MMMM Do YYYY [at] h:mm:ss a')}</p>
+                                </div>
                             </div>
                         })}
                     </div>

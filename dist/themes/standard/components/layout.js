@@ -44,43 +44,51 @@ var Standard = React.createClass({
                             'div',
                             { className: 'event' },
                             React.createElement(
+                                'div',
+                                { className: 'event-cover' },
+                                React.createElement('img', { src: event.cover.source, alt: '' })
+                            ),
+                            React.createElement(
                                 'h3',
                                 { className: 'event-name' },
                                 event.name
                             ),
-                            React.createElement('hr', null),
                             React.createElement(
-                                'p',
-                                null,
-                                React.createElement(
-                                    'span',
-                                    { className: 'event-meta' },
-                                    'Description:'
+                                'div',
+                                { className: 'event-metas' },
+                                event.description && React.createElement(
+                                    'p',
+                                    null,
+                                    React.createElement(
+                                        'span',
+                                        { className: 'event-meta' },
+                                        'Description:'
+                                    ),
+                                    ' ',
+                                    event.description
                                 ),
-                                ' ',
-                                event.description
-                            ),
-                            React.createElement(
-                                'p',
-                                null,
                                 React.createElement(
-                                    'span',
-                                    { className: 'event-meta' },
-                                    'Place:'
+                                    'p',
+                                    null,
+                                    React.createElement(
+                                        'span',
+                                        { className: 'event-meta' },
+                                        'Place:'
+                                    ),
+                                    ' ',
+                                    event.place.name
                                 ),
-                                ' ',
-                                event.place.name
-                            ),
-                            React.createElement(
-                                'p',
-                                null,
                                 React.createElement(
-                                    'span',
-                                    { className: 'event-meta' },
-                                    'Date:'
-                                ),
-                                ' ',
-                                moment(event.start_time).format('dddd, MMMM Do YYYY [at] h:mm:ss a')
+                                    'p',
+                                    null,
+                                    React.createElement(
+                                        'span',
+                                        { className: 'event-meta' },
+                                        'Date:'
+                                    ),
+                                    ' ',
+                                    moment(event.start_time).format('MMMM Do YYYY [at] h:mm:ss a')
+                                )
                             )
                         );
                     })
