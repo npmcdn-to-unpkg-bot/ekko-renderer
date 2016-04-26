@@ -38,58 +38,75 @@ var Standard = React.createClass({
                 ),
                 React.createElement(
                     'div',
-                    { className: 'split' },
-                    React.createElement(
-                        'div',
-                        { className: 'events' },
-                        this.props.doc.data.events.map(function (event) {
-                            return React.createElement(
-                                'div',
-                                null,
-                                React.createElement(
-                                    'h3',
-                                    null,
-                                    event.name
-                                ),
-                                React.createElement(
-                                    'p',
-                                    null,
-                                    'Description: ',
-                                    event.description
-                                ),
-                                React.createElement(
-                                    'p',
-                                    null,
-                                    'Place: ',
-                                    event.place.name
-                                ),
-                                React.createElement(
-                                    'p',
-                                    null,
-                                    'Date: ',
-                                    new Date(event.start_time).toString()
-                                )
-                            );
-                        })
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'posts' },
-                        this.props.doc.data.posts.map(function (post) {
-                            return React.createElement(
+                    { className: 'events' },
+                    this.props.doc.data.events.map(function (event) {
+                        return React.createElement(
+                            'div',
+                            { className: 'event' },
+                            React.createElement(
                                 'h3',
+                                { className: 'event-name' },
+                                event.name
+                            ),
+                            React.createElement('hr', null),
+                            React.createElement(
+                                'p',
                                 null,
-                                post.message,
-                                ' - ',
                                 React.createElement(
-                                    'small',
-                                    null,
-                                    moment(post.created_time).fromNow()
-                                )
-                            );
-                        })
-                    )
+                                    'span',
+                                    { className: 'event-meta' },
+                                    'Description:'
+                                ),
+                                ' ',
+                                event.description
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                React.createElement(
+                                    'span',
+                                    { className: 'event-meta' },
+                                    'Place:'
+                                ),
+                                ' ',
+                                event.place.name
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                React.createElement(
+                                    'span',
+                                    { className: 'event-meta' },
+                                    'Date:'
+                                ),
+                                ' ',
+                                moment(event.start_time).format('dddd, MMMM Do YYYY [at] h:mm:ss a')
+                            )
+                        );
+                    })
                 ),
+                React.createElement('hr', null),
+                React.createElement(
+                    'div',
+                    { className: 'posts' },
+                    this.props.doc.data.posts.map(function (post) {
+                        return React.createElement(
+                            'div',
+                            { className: 'post' },
+                            React.createElement(
+                                'p',
+                                { className: 'post-body' },
+                                post.message
+                            ),
+                            React.createElement(
+                                'p',
+                                { className: 'post-meta' },
+                                moment(post.created_time).fromNow()
+                            )
+                        );
+                    })
+                ),
+                React.createElement('hr', null),
                 React.createElement(
                     'div',
                     { className: 'cta' },

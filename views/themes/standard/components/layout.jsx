@@ -23,23 +23,27 @@ var Standard = React.createClass({
                 </header>
                 <main>
                     <h2 className="desc">{this.props.doc.data.about}</h2>
-                    <div className="split">
-                        <div className="events">
-                            {this.props.doc.data.events.map(event => {
-                                return <div>
-                                    <h3>{event.name}</h3>
-                                    <p>Description: {event.description}</p>
-                                    <p>Place: {event.place.name}</p>
-                                    <p>Date: {new Date(event.start_time).toString()}</p>
-                                </div>
-                            })}
-                        </div>
-                        <div className="posts">
-                            {this.props.doc.data.posts.map(post => {
-                                return <h3>{post.message} - <small>{moment(post.created_time).fromNow()}</small></h3>
-                            })}
-                        </div>
+                    <div className="events">
+                        {this.props.doc.data.events.map(event => {
+                            return <div className="event">
+                                <h3 className="event-name">{event.name}</h3>
+                                <hr/>
+                                <p><span className="event-meta">Description:</span> {event.description}</p>
+                                <p><span className="event-meta">Place:</span> {event.place.name}</p>
+                                <p><span className="event-meta">Date:</span> {moment(event.start_time).format('dddd, MMMM Do YYYY [at] h:mm:ss a')}</p>
+                            </div>
+                        })}
                     </div>
+                    <hr/>
+                    <div className="posts">
+                        {this.props.doc.data.posts.map(post => {
+                            return <div className="post">
+                                <p className="post-body">{post.message}</p>
+                                <p className="post-meta">{moment(post.created_time).fromNow()}</p>
+                            </div>
+                        })}
+                    </div>
+                    <hr/>
                     <div className="cta">
                         <a className="button" href={cta.web_url}>{(cta.type == 'CONTACT_US') && 'Contact us'}</a>
                     </div>

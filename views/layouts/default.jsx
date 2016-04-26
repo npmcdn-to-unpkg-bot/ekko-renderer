@@ -7,6 +7,7 @@ var DefaultLayout = React.createClass({
                 <head>
                     <title>{this.props.title}</title>
                     <link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet" />
+                    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
                     {(this.props.children.props.theme) && (
                         <link
                             href={`${this.props.children.props.env == 'development'

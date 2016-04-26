@@ -18,6 +18,7 @@ var DefaultLayout = React.createClass({
                     this.props.title
                 ),
                 React.createElement("link", { href: "https://npmcdn.com/basscss@8.0.1/css/basscss.min.css", rel: "stylesheet" }),
+                React.createElement("link", { href: "https://fonts.googleapis.com/css?family=Lato", rel: "stylesheet", type: "text/css" }),
                 this.props.children.props.theme && React.createElement("link", {
                     href: (this.props.children.props.env == 'development' ? 'http://localhost:9000' : 'https://sites.ekko.site') + "/dist/themes/" + this.props.children.props.theme.name + "/css/app.css",
                     rel: "stylesheet" })
