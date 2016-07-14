@@ -50,9 +50,11 @@ var Standard = React.createClass({
                         })}
                     </div>
                     <hr/>
-                    <div className="cta">
-                        <a className="button" href={cta.web_url}>{(cta.type == 'CONTACT_US') && 'Contact us'}</a>
-                    </div>
+                    {(cta) && (
+                        <div className="cta">
+                            <a className="button" href={cta.web_url}>{(cta.type == 'CONTACT_US') && 'Contact us'}</a>
+                        </div>    
+                    )}
                     <div className="photo-grid">
                         {this.props.doc.data.photos.map(photo => {
                             let image = photo.images.length

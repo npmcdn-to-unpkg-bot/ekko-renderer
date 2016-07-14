@@ -115,7 +115,7 @@ var Standard = React.createClass({
                     })
                 ),
                 React.createElement('hr', null),
-                React.createElement(
+                cta && React.createElement(
                     'div',
                     { className: 'cta' },
                     React.createElement(
