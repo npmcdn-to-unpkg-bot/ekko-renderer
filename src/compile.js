@@ -1,9 +1,9 @@
-var React = require('react')
-var ReactDOMServer = require('react-dom/server')
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import component from './views/page'
 
-function renderFile(env, options, cb, client) {
+const renderFile = (env, options, cb, client) => {
     try {
-        var component = require('./dist/page')
         var markup = '<!DOCTYPE html>'
         markup += ReactDOMServer.renderToStaticMarkup(
             React.createElement(component, Object.assign({}, options, {
@@ -19,4 +19,4 @@ function renderFile(env, options, cb, client) {
     cb(null, markup)
 }
 
-module.exports = renderFile
+export default renderFile
