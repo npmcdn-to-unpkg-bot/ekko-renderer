@@ -43,7 +43,8 @@ var DefaultLayout = function (_React$Component) {
                     ),
                     _react2.default.createElement("link", { href: "https://npmcdn.com/basscss@8.0.1/css/basscss.min.css", rel: "stylesheet" }),
                     _react2.default.createElement("link", { href: "https://npmcdn.com/basscss-colors@2.2.0/css/colors.css", rel: "stylesheet" }),
-                    _react2.default.createElement("link", { href: "https://npmcdn.com/basscss-background-colors/css/background-colors.css", rel: "stylesheet" })
+                    _react2.default.createElement("link", { href: "https://npmcdn.com/basscss-background-colors/css/background-colors.css", rel: "stylesheet" }),
+                    _react2.default.createElement("link", { rel: "stylesheet", href: (this.props.production ? '' : 'http://localhost:9000') + "/css/" + this.props.theme + "/app.css" })
                 ),
                 _react2.default.createElement(
                     "body",

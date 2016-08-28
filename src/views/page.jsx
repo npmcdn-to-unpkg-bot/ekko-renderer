@@ -12,7 +12,7 @@ class Page extends React.Component {
         }
         const Theme = Themes[this.props.theme.name]
         return (
-            <DefaultLayout title={this.props.doc.data.name}>
+            <DefaultLayout title={this.props.doc.data.name} theme={this.props.theme.name} production={this.props.env == 'production'}>
                 <Theme {...this.props} />
             </DefaultLayout>
         )

@@ -55,7 +55,7 @@ var Page = function (_React$Component) {
             var Theme = _themes2.default[this.props.theme.name];
             return _react2.default.createElement(
                 _default2.default,
-                { title: this.props.doc.data.name },
+                { title: this.props.doc.data.name, theme: this.props.theme.name, production: this.props.env == 'production' },
                 _react2.default.createElement(Theme, this.props)
             );
         }
