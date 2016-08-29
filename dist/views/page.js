@@ -18,6 +18,10 @@ var _themes = require('./themes/');
 
 var _themes2 = _interopRequireDefault(_themes);
 
+var _css = require('./themes/css');
+
+var _css2 = _interopRequireDefault(_css);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55,7 +59,7 @@ var Page = function (_React$Component) {
             var Theme = _themes2.default[this.props.theme.name];
             return _react2.default.createElement(
                 _default2.default,
-                { title: this.props.doc.data.name, theme: this.props.theme.name, production: this.props.env == 'production' },
+                { title: this.props.doc.data.name, theme: this.props.theme.name, production: this.props.env == 'production', css: _css2.default[this.props.theme.name] },
                 _react2.default.createElement(Theme, this.props)
             );
         }
