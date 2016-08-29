@@ -12,7 +12,8 @@
     "moment": "^2.13.0",
     "node-sass": "^3.4.2",
     "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react-dom": "^0.14.8",
+    "babel-plugin-transform-import-to-read-file-sync": "^0.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,10 +23,5 @@
   },
   "keywords": [],
   "author": "Ben Howdle <hello@benhowdle.im> (http://benhowdle.im/)",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-plugin-css-modules-transform": "^0.2.1",
-    "babel-plugin-transform-import-to-read-file-sync": "^0.1.1",
-    "css-import": "0.0.1"
-  }
+  "license": "ISC"
 }
