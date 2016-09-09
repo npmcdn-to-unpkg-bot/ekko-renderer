@@ -7,10 +7,6 @@
                 "expose": "themes"
             }]
         ],
-        "add-module-exports",
-        ["transform-import-to-read-file-sync", {
-            "test": "\\.css$",
-            "options": "utf8"
-        }]
+        "add-module-exports"
     ]
 }

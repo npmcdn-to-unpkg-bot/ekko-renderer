@@ -11,27 +11,26 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var style = {
-    about: {
+    footer: {
         borderColor: 'rgba(0,0,0,0.1)'
     }
 };
 
 exports.default = function (_ref) {
     var about = _ref.about;
-    var description = _ref.description;
 
     return _react2.default.createElement(
         'div',
-        { style: style.about, className: 'center mb4 border-bottom pb4 max-width-3 mx-auto' },
+        { style: style.footer, className: 'max-width-4 mx-auto p2 border-top mt4' },
         _react2.default.createElement(
-            'h2',
-            { className: 'my2' },
+            'p',
+            { className: 'inline-block' },
             about
         ),
         _react2.default.createElement(
             'p',
-            null,
-            description
+            { className: 'right' },
+            new Date().getFullYear()
         )
     );
 };

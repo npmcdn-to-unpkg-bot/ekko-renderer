@@ -18,7 +18,7 @@ exports.default = function (_ref) {
     }
     return _react2.default.createElement(
         "div",
-        { className: "photo-grid flex flex-wrap flex-column max-width-3 mx-auto" },
+        { className: "photo-grid flex flex-wrap" },
         photos && photos.map(function (photo) {
             var image = photo.images.length ? photo.images[0] : null;
             if (!image) {

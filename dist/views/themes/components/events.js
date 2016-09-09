@@ -14,6 +14,12 @@ var _moment2 = _interopRequireDefault(_moment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var style = {
+    event: {
+        borderColor: 'rgba(0,0,0,0.1)'
+    }
+};
+
 exports.default = function (_ref) {
     var events = _ref.events;
 
@@ -22,7 +28,7 @@ exports.default = function (_ref) {
     }
     return _react2.default.createElement(
         'div',
-        { className: 'events my4 center mx-auto max-width-3' },
+        { className: 'events my4 center' },
         _react2.default.createElement(
             'h2',
             { className: 'mb2' },
@@ -31,7 +37,7 @@ exports.default = function (_ref) {
         events && events.map(function (event) {
             return _react2.default.createElement(
                 'div',
-                { className: 'event mb4 border-bottom pb4' },
+                { style: style.event, className: 'event mb4 border-bottom pb4' },
                 _react2.default.createElement(
                     'div',
                     { className: 'inline-block mx-auto' },

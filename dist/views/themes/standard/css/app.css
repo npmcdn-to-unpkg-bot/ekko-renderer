@@ -14,12 +14,17 @@ html {
 body {
   font-family: system, -apple-system, BlinkMacSystemFont, helvetica neue, lucida grande, sans-serif;
   line-height: 1.65;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  background: #f7f7f7;
+  color: #222; }
 
 img {
   max-width: 100%;
   height: auto;
   display: block; }
+
+a {
+  color: inherit; }
 
 .capitalise {
   text-transform: capitalize; }

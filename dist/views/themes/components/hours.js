@@ -25,10 +25,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Monday: ",
+                "Monday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.mon_1_open,
                     " - ",
                     hours.mon_1_close
@@ -37,10 +37,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Tuesday: ",
+                "Tuesday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.tue_1_open,
                     " - ",
                     hours.tue_1_close
@@ -49,10 +49,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Wednesday: ",
+                "Wednesday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.wed_1_open,
                     " - ",
                     hours.wed_1_close
@@ -61,10 +61,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Thursday: ",
+                "Thursday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.thu_1_open,
                     " - ",
                     hours.thu_1_close
@@ -73,10 +73,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Friday: ",
+                "Friday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.fri_1_open,
                     " - ",
                     hours.fri_1_close
@@ -85,10 +85,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Saturday: ",
+                "Saturday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.sat_1_open,
                     " - ",
                     hours.sat_1_close
@@ -97,10 +97,10 @@ exports.default = function (_ref) {
             _react2.default.createElement(
                 "li",
                 null,
-                "Sunday: ",
+                "Sunday ",
                 _react2.default.createElement(
                     "span",
-                    { className: "bold" },
+                    { className: "bold right pl2" },
                     hours.sun_1_open,
                     " - ",
                     hours.sun_1_close

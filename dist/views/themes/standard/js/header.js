@@ -35,19 +35,42 @@ exports.default = function (_ref) {
 
 
     var styles = {
-        backgroundImage: cover ? 'linear-gradient(\n                              rgba(0,0,0,0.4),\n                              rgba(0,0,0,0.4)\n                          ),\n                          url(' + cover.source + ')' : 'none',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        header: {
+            overflow: 'hidden'
+        },
+        name: {
+            borderWidth: '5px'
+        },
+        phone: {
+            borderWidth: '5px'
+        },
+        blur: {
+            position: 'absolute',
+            top: '-10px',
+            left: '-10px',
+            bottom: '-10px',
+            right: '-10px',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center top',
+            backgroundColor: '#1c1c1c',
+            WebkitFilter: 'blur(4px)',
+            backgroundImage: cover ? 'linear-gradient(\n                                  rgba(0,0,0,0.4),\n                                  rgba(0,0,0,0.1)\n                              ),\n                              url(' + cover.source + ')' : 'none',
+            zIndex: '-1'
+        }
     };
 
     return _react2.default.createElement(
         'header',
-        { style: styles, className: 'px2 py4 center' },
-        _react2.default.createElement(_name2.default, { name: name }),
-        _react2.default.createElement(_profilePicture2.default, { picture: picture.url }),
-        _react2.default.createElement(_phone2.default, { phone: phone }),
-        _react2.default.createElement(_cta2.default, { ctas: callToActions })
+        { style: styles.header, className: 'px2 py4 center mb4 relative border' },
+        _react2.default.createElement('div', { style: styles.blur }),
+        _react2.default.createElement(
+            'div',
+            { className: 'flex flex-column items-center mx-auto max-width-4' },
+            _react2.default.createElement(_name2.default, { name: name, style: styles.name, className: 'py1 px2 border bg-black inline-block mx-auto mb4' }),
+            _react2.default.createElement(_profilePicture2.default, { picture: picture.url }),
+            _react2.default.createElement(_phone2.default, { phone: phone, style: styles.phone, className: 'py1 px2 border bg-black bold white' })
+        )
     );
 };
 

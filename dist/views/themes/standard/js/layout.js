@@ -18,6 +18,10 @@ var _header = require('./header');
 
 var _header2 = _interopRequireDefault(_header);
 
+var _footer = require('./footer');
+
+var _footer2 = _interopRequireDefault(_footer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35,6 +39,13 @@ var Name = _components2.default.Name;
 var Phone = _components2.default.Phone;
 var Photos = _components2.default.Photos;
 var Posts = _components2.default.Posts;
+
+
+var style = {
+    wrap: {
+        borderColor: 'rgba(0,0,0,0.1)'
+    }
+};
 
 var Standard = function (_React$Component) {
     _inherits(Standard, _React$Component);
@@ -69,16 +80,20 @@ var Standard = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_header2.default, { cover: cover, picture: picture, name: name, phone: phone, callToActions: call_to_actions }),
-                _react2.default.createElement(About, { about: about, description: description }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'flex mx-auto max-width-4 justify-center' },
-                    _react2.default.createElement(Location, { location: location }),
-                    _react2.default.createElement(Hours, { hours: hours })
-                ),
-                _react2.default.createElement(Events, { events: events.slice(0, 5) }),
-                _react2.default.createElement(Posts, { posts: posts.slice(0, 5) }),
-                _react2.default.createElement(Photos, { photos: photos.slice(0, 5) })
+                    { className: 'max-width-4 mx-auto px4 pt4 pb2 bg-white border mb4', style: style.wrap },
+                    _react2.default.createElement(About, { about: about, description: description }),
+                    (location && location.street || hours) && _react2.default.createElement(
+                        'div',
+                        { className: 'flex mx-auto max-width-4 justify-center border-bottom pb4', style: style.wrap },
+                        _react2.default.createElement(Location, { location: location }),
+                        _react2.default.createElement(Hours, { hours: hours })
+                    ),
+                    _react2.default.createElement(Events, { events: events.slice(0, 5) }),
+                    _react2.default.createElement(Posts, { posts: posts.slice(0, 5) }),
+                    _react2.default.createElement(_footer2.default, { about: about })
+                )
             );
         }
     }]);
